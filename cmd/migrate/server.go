@@ -3,18 +3,20 @@ package migrate
 import (
 	"bytes"
 	"fmt"
-	tools2 "go-admin/tools"
 	"strconv"
 	"text/template"
 	"time"
 
 	"github.com/spf13/cobra"
+
 	"go-admin/cmd/migrate/migration"
 	_ "go-admin/cmd/migrate/migration/version"
+	_ "go-admin/cmd/migrate/migration/version-local"
 	"go-admin/common/database"
 	"go-admin/common/global"
 	"go-admin/common/models"
 	"go-admin/pkg/logger"
+	tools2 "go-admin/tools"
 	"go-admin/tools/config"
 )
 
