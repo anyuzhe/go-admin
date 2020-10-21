@@ -1,7 +1,6 @@
 package migration
 
 import (
-	"fmt"
 	"log"
 	"path/filepath"
 	"sort"
@@ -47,7 +46,6 @@ func (e *Migration) Migrate() {
 	var err error
 	var count int64
 	for _, v := range versions {
-		fmt.Println(v)
 		err = e.db.Debug().Table("sys_migration").Where("version = ?", v).Count(&count).Error
 		if err != nil {
 			log.Fatalln(err)
